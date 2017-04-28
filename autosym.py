@@ -14,9 +14,14 @@ while(1):
     env = parseExpr(fun, var, set(operations))
     env.update(operations)
 
-    exec "__value = "+fun in env
+    try:
 
-    print(env["__value"].ipart().str)
+      exec "__value = "+fun in env
+
+      print(env["__value"].ipart().str)
+
+    except BaseException as err:
+      print("Error happened: " + format(err))
 
   elif(cmd == "help"):
     print("This program differentiates mathematical expressions. Type `diff`.")

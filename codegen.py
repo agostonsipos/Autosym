@@ -1,13 +1,7 @@
-def string(x):
-  if(type(x) is int or type(x) is float or type(x) is str):
-    return str(x)
-  else:
-    return x.str
-
 def is_zero(x):
-  return string(x) == "0" or string(x) == "0.0"
+  return str(x) == "0" or str(x) == "0.0"
 def is_one(x):
-  return string(x) == "1" or string(x) == "1.0"
+  return str(x) == "1" or str(x) == "1.0"
 
 class codegen:
   def __init__(self, s):
@@ -64,7 +58,7 @@ class codegen:
     if(is_zero(a)):
       return codegen(0)
     elif(is_zero(b)):
-      raise("zero division")
+      raise(ZeroDivisionError("division by zero"))
     elif(is_one(b)):
       return a
     elif(a == b):

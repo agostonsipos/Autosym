@@ -26,7 +26,6 @@ class Dualnumber:
     b = dualnumberify(b)
     return Dualnumber(a.x+b.x, a.y+b.y)
 
-
   def __sub__(a, b):
     b = dualnumberify(b)
     return Dualnumber(a.x-b.x, a.y-b.y)
@@ -47,7 +46,6 @@ class Dualnumber:
   def __rdiv__(a, b):
     b = dualnumberify(b)
     return Dualnumber(b.x / a.x, (b.y*a.x - b.x*a.y) / (a.x*a.x))
-
 
   def __pow__(a, b):
     b = dualnumberify(b)
